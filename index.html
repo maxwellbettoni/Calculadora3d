@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Custos - MAX 3D STUDIO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <h1>MAX 3D STUDIO</h1>
+            <p>Calculadora de Precificação Premium - Bambu Lab A1</p>
+        </header>
+
+        <main>
+            <section class="calculator-panel glass-panel">
+                <form id="calc-form">
+                    <h3 class="section-title"
+                        style="margin-bottom: 1rem; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                        📦 Dados da Impressão</h3>
+                    <div class="input-group">
+                        <label for="peso">Peso da Peça (g)</label>
+                        <input type="number" id="peso" value="50" min="0" step="1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tempo">Tempo de Impressão (Horas)</label>
+                        <input type="number" id="tempo" value="2" min="0" step="0.1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="precoFilamento">Preço do Filamento (R$/kg)</label>
+                        <input type="number" id="precoFilamento" value="120" min="0" step="0.01" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="acessorios">Acessórios/Embalagem (R$)</label>
+                        <input type="number" id="acessorios" value="2.00" min="0" step="0.01" required>
+                    </div>
+                    <hr>
+                    <h3 class="section-title"
+                        style="margin-bottom: 1rem; color: var(--primary); font-size: 1.1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.5rem;">
+                        ⚙️ Parâmetros Operacionais</h3>
+                    <div class="input-group">
+                        <label for="custoHora">Custo Hora Impressora (R$/h)</label>
+                        <input type="number" id="custoHora" value="1.50" min="0" step="0.1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="watts">Consumo Energia (Watts)</label>
+                        <input type="number" id="watts" value="150" min="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="taxaKwh">Taxa de Energia (R$/kWh)</label>
+                        <input type="number" id="taxaKwh" value="0.85" min="0" step="0.01" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="lucro">Margem de Lucro (%)</label>
+                        <input type="number" id="lucro" value="100" min="0" required>
+                    </div>
+                </form>
+            </section>
+
+            <section class="results-panel glass-panel summary">
+                <h2>Resumo Financeiro</h2>
+                <div class="result-item">
+                    <span>Custo de Produção</span>
+                    <span id="resCusto">R$ 0,00</span>
+                </div>
+                <div class="result-item" style="color: var(--accent);">
+                    <span>Lucro Líquido</span>
+                    <span id="resLucro" style="font-weight: 600; font-size: 1.25rem;">R$ 0,00</span>
+                </div>
+                <div class="result-total highlight-total">
+                    <span>Preço Sugerido (Venda)</span>
+                    <span id="resVenda">R$ 0,00</span>
+                </div>
+
+                <div class="footer-note"
+                    style="margin-top: 3rem; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                    <p style="margin-bottom: 0.5rem;">Estratégia MEI: Acabamento Premium & Peças Exclusivas.</p>
+                    <p>#3DPrinting #BambuLabA1 #Max3DStudio</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
